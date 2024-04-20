@@ -1,0 +1,5 @@
+.scannerwork
+node_modules
+coverage
+coverage.out
+.env

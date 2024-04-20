@@ -3,9 +3,20 @@ package main
 import "testing"
 
 func TestSum(t *testing.T) {
-	result := sum(2, 2)
+	test := []struct {
+		a, b, expected int
+	}{
+		{2, 2, 4},
+		{3, 2, 5},
+		{4, 2, 6},
+		{5, 2, 7},
+	}
 
-	if result != 4 {
-		t.Error("The result must be 4")
+	for _, test := range test {
+		result := sum(test.a, test.b)
+
+		if result != test.expected {
+			t.Errorf("The result must be %d", test.expected)
+		}
 	}
 }
